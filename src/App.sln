@@ -7,9 +7,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CB8C217C-71E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2438083C-F4A7-4A1B-99F4-6D5C91B4CB58}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{FD5D4547-26FB-47CE-9305-597D33EB6F44}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD5D4547-26FB-47CE-9305-597D33EB6F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD5D4547-26FB-47CE-9305-597D33EB6F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD5D4547-26FB-47CE-9305-597D33EB6F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD5D4547-26FB-47CE-9305-597D33EB6F44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD5D4547-26FB-47CE-9305-597D33EB6F44} = {CB8C217C-71E6-44E8-BD84-B1A1A74A9F91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B2190EA8-3BE5-4397-84C8-B4D86F579591}
