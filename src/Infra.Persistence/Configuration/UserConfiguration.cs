@@ -32,8 +32,6 @@ namespace Infra.Persistence.Configuration
             builder.Property(e => e.Password)
                    .IsRequired()
                    .HasMaxLength(100);
-
-            builder.HasData(new User("", "", "", ""));
         }
     }
 }
