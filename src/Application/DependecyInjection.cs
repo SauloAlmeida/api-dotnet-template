@@ -9,8 +9,8 @@ namespace Application
         {
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-            services.AddMediatR(cfg => {
-                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddMediatR(c => {
+                c.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             });
 
             return services;

@@ -1,5 +1,5 @@
-﻿using Application.Exceptions;
-using Application.Interfaces;
+﻿using Application.Common.Exceptions;
+using Application.Common.Interfaces;
 using Application.UserCases.User.Base;
 
 namespace Application.UserCases.User.Queries.GetUser

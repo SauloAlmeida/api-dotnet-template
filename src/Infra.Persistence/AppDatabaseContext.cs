@@ -1,4 +1,4 @@
-﻿using Application.Interfaces;
+﻿using Application.Common.Interfaces;
 using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;

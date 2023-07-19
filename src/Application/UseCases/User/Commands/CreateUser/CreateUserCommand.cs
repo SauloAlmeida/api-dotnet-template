@@ -1,4 +1,4 @@
-﻿using Application.Interfaces;
+﻿using Application.Common.Interfaces;
 
 namespace Application.UserCases.User.Commands.CreateUser
 {
