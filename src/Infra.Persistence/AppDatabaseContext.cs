@@ -7,10 +7,12 @@ namespace Infra.Persistence
 {
     public class AppDatabaseContext : DbContext, IAppDatabaseContext
     {
-        public DbSet<User> Users => Set<User>();
+        public AppDatabaseContext() { }
 
         public AppDatabaseContext(DbContextOptions<AppDatabaseContext> options)
             : base(options) { }
+
+        public DbSet<User> Users => Set<User>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Persistence", "Infra.Persistence\Infra.Persistence.csproj", "{E4CFBA0D-F993-4E61-A18F-F6B64E7B68FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{D4182C1C-3403-4C11-BE20-A84667498171}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{D4182C1C-3403-4C11-BE20-A84667498171}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{238EE87B-A3EC-44DE-93FF-9704C5318767}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{D4182C1C-3403-4C11-BE20-A84667498171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4182C1C-3403-4C11-BE20-A84667498171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4182C1C-3403-4C11-BE20-A84667498171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{238EE87B-A3EC-44DE-93FF-9704C5318767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{238EE87B-A3EC-44DE-93FF-9704C5318767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{238EE87B-A3EC-44DE-93FF-9704C5318767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{238EE87B-A3EC-44DE-93FF-9704C5318767}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{FD5D4547-26FB-47CE-9305-597D33EB6F44} = {CB8C217C-71E6-44E8-BD84-B1A1A74A9F91}
 		{E4CFBA0D-F993-4E61-A18F-F6B64E7B68FC} = {CB8C217C-71E6-44E8-BD84-B1A1A74A9F91}
 		{D4182C1C-3403-4C11-BE20-A84667498171} = {CB8C217C-71E6-44E8-BD84-B1A1A74A9F91}
+		{238EE87B-A3EC-44DE-93FF-9704C5318767} = {CB8C217C-71E6-44E8-BD84-B1A1A74A9F91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B2190EA8-3BE5-4397-84C8-B4D86F579591}
