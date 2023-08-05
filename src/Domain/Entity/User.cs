@@ -12,16 +12,17 @@ namespace Domain.Entity
         public UserStatus Status { get; private set; }
         public DateTime CreatedAt { get; private set; }
         
-        public User(string name, string email, string lastName, string password)
+        public User(string name, string lastName, string email, string password)
             : base()
         {
             Name = name;
             LastName = lastName;
             Email = email;
             Password = password;
+            Validate();
+
             Status = UserStatus.Active;
             CreatedAt = DateTime.Now;
-            Validate();
         }
 
         public string GetFullName() => $"{Name} {LastName}";
