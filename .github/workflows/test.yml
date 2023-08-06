@@ -21,6 +21,8 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Test
         run: ls
+      - name: Go to src folder
+        run: cd src
       - name: Install dependencies
         run: dotnet restore
       - name: Build
