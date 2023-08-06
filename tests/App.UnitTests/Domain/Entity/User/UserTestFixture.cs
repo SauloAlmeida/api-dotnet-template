@@ -1,6 +1,4 @@
-﻿using DomainEntity = Domain.Entity;
-
-namespace App.UnitTests.Domain.Entity.User
+﻿namespace App.UnitTests.Domain.Entity.User
 {
     [CollectionDefinition(nameof(UserTestFixture))]
     public class UserTestFixtureCollection : ICollectionFixture<UserTestFixture> { }

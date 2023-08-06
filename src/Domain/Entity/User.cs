@@ -27,7 +27,7 @@ namespace Domain.Entity
 
         public string GetFullName() => $"{Name} {LastName}";
 
-        public void Validate()
+        void Validate()
         {
             DomainValidation.NotNullOrEmpty(Name, nameof(Name));
             DomainValidation.NotNullOrEmpty(LastName, nameof(LastName));
