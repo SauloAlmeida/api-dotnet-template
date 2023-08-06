@@ -19,13 +19,12 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
-      - name: Go to src folder
-        run: cd src
-      - name: Test
-        run: ls
       - name: Install dependencies
         run: dotnet restore
+        working-directory: ./src
       - name: Build
         run: dotnet build --configuration Release --no-restore
+        working-directory: ./src
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+        working-directory: ./src
