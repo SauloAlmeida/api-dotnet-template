@@ -5,24 +5,24 @@
 * [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
 * [Docker](https://docs.docker.com/desktop/install/windows-install/)
 
-## Instalação
+## InstalaÃ§Ã£o
 
 1. Clone o projeto	
 ```bash
 https://github.com/SauloAlmeida/api-dotnet-template
 ```
 
-2. Acesse o diretório
+2. Acesse o diretÃ³rio
 ```bash
 cd api-dotnet-template/src
 ```
 
-3. Restaure as dependências:
+3. Restaure as dependÃªncias:
 ```bash
 dotnet restore
 ```
 
-## Rodar o projeto
+## Excutar o projeto
 
 1. Rode o projeto
 ```bash
