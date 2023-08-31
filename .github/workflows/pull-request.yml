@@ -33,7 +33,9 @@ jobs:
         shell: bash
       - name: Create pull request
         if: steps.check-pr.outputs.pr_exists == 'false'
-        uses: vsoch/pull-request-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PULL_REQUEST_BRANCH: "$BRANCH_NAME"
+        id: open-pr
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "main"
+          pr_title: "feat: PLACEHOLDER TITLE"
+          pr_draft: true  
