@@ -25,10 +25,10 @@ jobs:
 
           if [ -z "$PR_EXISTS" ]; then
             echo "No existing pull request found for branch $BRANCH_NAME."
-            echo "::set-output name=pr_exists::false"
+            echo "pr_exists=false" >>$GITHUB_OUTPUT
           else
             echo "Existing pull request found for branch $BRANCH_NAME: #$PR_EXISTS"
-            echo "::set-output name=pr_exists::true"
+            echo "pr_exists=true" >>$GITHUB_OUTPUT
           fi
         shell: bash        
       - name: Create pull request
