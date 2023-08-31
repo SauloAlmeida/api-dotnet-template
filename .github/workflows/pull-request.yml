@@ -1,9 +1,7 @@
 name: Create pull request for new branch
 
 on:
-  push:
-    branches-ignore:
-        - "main"
+  create
 
 jobs:
   auto-pull-request:
@@ -37,5 +35,5 @@ jobs:
         if: steps.check-pr.outputs.pr_exists == 'false'
         with:
             destination_branch: "main"
-            pr_title: "feat: PLACEHOLDER TITLE"
+            pr_title: "feat: $BRANCH_NAME"
             pr_draft: true
