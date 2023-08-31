@@ -30,12 +30,11 @@ jobs:
             echo "Existing pull request found for branch $BRANCH_NAME: #$PR_EXISTS"
             echo "::set-output name=pr_exists::true"
           fi
-        shell: bash
-      - uses: actions/checkout@v3
-        if: steps.check-pr.outputs.pr_exists == 'false'
+        shell: bash        
       - name: Create pull request
         id: open-pr
         uses: repo-sync/pull-request@v2 
+        if: steps.check-pr.outputs.pr_exists == 'false'
         with:
             destination_branch: "main"
             pr_title: "feat: PLACEHOLDER TITLE"
