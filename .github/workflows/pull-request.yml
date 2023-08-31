@@ -2,11 +2,8 @@ name: Create pull request for new branch
 
 on:
   push:
-    branches:
-      - '!lab'
-      - '!hmg'
-      - '!main'
-      - '!master'
+    branches-ignore:
+        - "main"
 
 jobs:
   auto-pull-request:
