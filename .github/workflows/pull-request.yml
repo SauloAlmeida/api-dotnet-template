@@ -12,28 +12,11 @@ jobs:
         id: get-branch
         run: |
           echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-        shell: bash
-      - name: Check for existing pull request
-        id: check-pr
-        run: |
-          # Check if a pull request with the branch already exists
-          PR_EXISTS=$(curl -s -X GET -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          "https://api.github.com/repos/${{ github.repository }}/pulls?state=open" | \
-          jq ".[] | select(.head.ref == \"$BRANCH_NAME\") | .number")
-
-          if [ -z "$PR_EXISTS" ]; then
-            echo "No existing pull request found for branch $BRANCH_NAME."
-            echo "pr_exists=false" >>$GITHUB_OUTPUT
-          else
-            echo "Existing pull request found for branch $BRANCH_NAME: #$PR_EXISTS"
-            echo "pr_exists=true" >>$GITHUB_OUTPUT
-          fi
-        shell: bash        
+        shell: bash       
       - name: Create pull request
         id: open-pr
         uses: repo-sync/pull-request@v2 
-        if: steps.check-pr.outputs.pr_exists == 'false'
         with:
             destination_branch: "main"
-            pr_title: "$BRANCH_NAME"
+            pr_title: $BRANCH_NAME
             pr_draft: true
