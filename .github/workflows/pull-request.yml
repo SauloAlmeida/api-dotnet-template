@@ -1,20 +1,42 @@
-name: Automatically create / update pull request
+name: Create pull request for new branch
 
-# run this workflow only on new feature branches, not when they're merged to main
 on:
   push:
-    branches-ignore:
-      - "main"
+    branches:
+      - '!lab'
+      - '!hmg'
+      - '!main'
+      - '!master'
 
 jobs:
-  create_pr_repo_sync:
+  auto-pull-request:
+    name: PullRequestAction
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Get branch name
+        id: get-branch
+        run: |
+          echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+        shell: bash
+      - name: Check for existing pull request
+        id: check-pr
+        run: |
+          # Check if a pull request with the branch already exists
+          PR_EXISTS=$(curl -s -X GET -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          "https://api.github.com/repos/${{ github.repository }}/pulls?state=open" | \
+          jq ".[] | select(.head.ref == \"$BRANCH_NAME\") | .number")
+
+          if [ -z "$PR_EXISTS" ]; then
+            echo "No existing pull request found for branch $BRANCH_NAME."
+            echo "::set-output name=pr_exists::false"
+          else
+            echo "Existing pull request found for branch $BRANCH_NAME: #$PR_EXISTS"
+            echo "::set-output name=pr_exists::true"
+          fi
+        shell: bash
       - name: Create pull request
-        id: open-pr
-        uses: repo-sync/pull-request@v2
-        with:
-          destination_branch: "main"
-          pr_title: "feat: PLACEHOLDER TITLE"
-          pr_draft: true  
+        if: steps.check-pr.outputs.pr_exists == 'false'
+        uses: vsoch/pull-request-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_BRANCH: "$BRANCH_NAME"
