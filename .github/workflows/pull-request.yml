@@ -17,4 +17,4 @@ jobs:
         with:
           destination_branch: "main"
           pr_title: "feat: PLACEHOLDER TITLE"
-          pr_draft: true
+          pr_draft: true 
