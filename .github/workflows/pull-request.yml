@@ -11,7 +11,7 @@ on:
 jobs:
   auto-pull-request:
     name: PullRequestAction
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     steps:
       - name: Get branch name
         id: get-branch
