@@ -8,15 +8,15 @@ jobs:
     name: PullRequestAction
     runs-on: ubuntu-latest
     steps:
-      - name: Set branch name
-        id: vars
+      - name: Get branch name
+        id: get-branch
         run: |
-         branch-name="${{ github.head_ref }}"
-         echo "branch-name=$branch-name" >> $GITHUB_OUTPUT
+          echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+        shell: bash
       - name: pull-request-action
         uses: vsoch/pull-request-action@master
         with:
-            title: ${{ steps.vars.outputs.branch-name }}
+            title: $BRANCH_NAME
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULL_REQUEST_BRANCH: "main"
