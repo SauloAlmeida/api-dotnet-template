@@ -35,7 +35,7 @@ jobs:
         if: steps.check-pr.outputs.pr_exists == 'false'
       - name: Create pull request
         id: open-pr
-        uses: repo-sync/pull-request@v2
+        uses: repo-sync/pull-request@v2 
         with:
             destination_branch: "main"
             pr_title: "feat: PLACEHOLDER TITLE"
