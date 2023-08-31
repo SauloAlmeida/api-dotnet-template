@@ -1,22 +1,18 @@
-name: Create pull request for new branch
+name: Automatically create / update pull request
 
+# run this workflow only on new feature branches, not when they're merged to main
 on:
-  create
+  create:
 
 jobs:
-  auto-pull-request:
-    name: PullRequestAction
-    runs-on: ubuntu-latest 
+  create_pr_repo_sync:
+    runs-on: ubuntu-latest
     steps:
-      - name: Get branch name
-        id: get-branch
-        run: |
-          echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-        shell: bash      
+      - uses: actions/checkout@v3
       - name: Create pull request
         id: open-pr
-        uses: repo-sync/pull-request@v2 
+        uses: repo-sync/pull-request@v2
         with:
-            destination_branch: "main"
-            pr_title: "feat: PLACEHOLDER TITLE"
-            pr_draft: true
+          destination_branch: "main"
+          pr_title: "feat: PLACEHOLDER TITLE"
+          pr_draft: true
