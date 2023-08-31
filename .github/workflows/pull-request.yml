@@ -12,11 +12,11 @@ jobs:
         id: get-branch
         run: |
           echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-        shell: bash       
+        shell: bash      
       - name: Create pull request
         id: open-pr
         uses: repo-sync/pull-request@v2 
         with:
             destination_branch: "main"
-            pr_title: "Title"
+            pr_title: "feat: PLACEHOLDER TITLE"
             pr_draft: true
