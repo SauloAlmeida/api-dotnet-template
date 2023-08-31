@@ -14,5 +14,5 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "main"
-          pr_title: "feat: PLACEHOLDER TITLE"
+          pr_title: "Pulling ${{ github.ref }} into master"
           pr_draft: true
