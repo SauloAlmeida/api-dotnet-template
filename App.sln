@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.UnitTests", "tests\App.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28A04177-F21D-458E-ABEE-9AE297E4323F}"
 	ProjectSection(SolutionItems) = preProject
-		..\README.md = ..\README.md
+		.\README.md = .\README.md
 	EndProjectSection
 EndProject
 Global
