@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Applicat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "src\Api\Api.csproj", "{238EE87B-A3EC-44DE-93FF-9704C5318767}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.UnitTests", ".\tests\App.UnitTests\App.UnitTests.csproj", "{519A1E14-FE3F-4018-B2C9-0B81247E850C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.UnitTests", "tests\App.UnitTests\App.UnitTests.csproj", "{519A1E14-FE3F-4018-B2C9-0B81247E850C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28A04177-F21D-458E-ABEE-9AE297E4323F}"
 	ProjectSection(SolutionItems) = preProject

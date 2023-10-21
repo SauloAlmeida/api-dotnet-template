@@ -22,19 +22,14 @@ cd api-dotnet-template/src
 dotnet restore
 ```
 
-## Excutar o projeto
+## Executar o projeto (Linux)
 
-1. Rode o projeto
+1. Rode o projeto (modo de desenvolvimento)
 ```bash
-dotnet run --project api
+./docker/linux/startup-dev.sh
 ```
 
-2. Veja a rota informada
+2. Acesse o swagger
 ```bash
-[00:00:01 INF] Now listening on: http://localhost:xxxx
-```
-
-3. Acesse o swagger
-```bash
-http://localhost:xxxx/swagger
+http://localhost:5000/swagger/index.html
 ```
